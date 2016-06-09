@@ -132,7 +132,7 @@
             <img src="images/ku.jpg" alt="哭">
           </p>
           <p>不要说，我知道，真TMD丑哭了</p>
-          <p>不要在意这些细节</p>
+          <p>但是，请不要在意这些细节</p>
         </div>
         <div class="swiper-slide slider-3">
           <h2>切记！！！</h2>
@@ -159,18 +159,18 @@
   <script>
     var mySwiper = new Swiper ('.swiper-container', {
       direction: 'vertical',
-      onInit: function(swiper){
+      onInit: function(){
         var time=new Date().getTime();
         $(".swiper-slide h2").addClass("to-bottom");
         setTimeout(function(){
           $(".swiper-slide p").addClass("to-right");
         },1500);
       },
-      onSlideChangeStart: function(swiper){
+      onSliderMove:function(){
         $(".swiper-slide h2").removeClass();
         $(".swiper-slide p").removeClass();
       },
-      onSlideChangeEnd: function(swiper){
+      onSlideChangeEnd: function(){
         $(".swiper-slide h2").addClass("to-bottom");
         setTimeout(function(){
           $(".swiper-slide p").addClass("to-right");
