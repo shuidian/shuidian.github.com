@@ -22,10 +22,95 @@
         height: 100%;
       }
       .swiper-slide{
+        overflow: hidden;
         text-align: center;
       }
       .swiper-slide img{
         width: 320px;
+      }
+      .swiper-slide h2{
+        position: relative;
+        top: -200px;
+      }
+      .swiper-slide h2.to-bottom{
+        animation: to-bottom 1.5s forwards;
+        -webkit-animation: to-bottom 1.5s forwards;
+      }
+      @keyframes to-bottom {
+        from{
+          top: -200px;
+          opacity: 0.2;
+        }
+        to{
+          top: 0px;
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes to-bottom {
+        from{
+          top: -200px;
+          opacity: 0.2;
+        }
+        to{
+          top: 0px;
+          opacity: 1;
+        }
+      }
+      .swiper-slide p{
+        position: relative;
+        left: -500px;
+      }
+      .swiper-slide p.to-right{
+        position: relative;
+        animation: toright 1.5s forwards;
+        -webkit-animation: toright 1.5s forwards;
+      }
+      @keyframes toright {
+        from{
+          left: -500px;
+          opacity: 0.2;
+        }
+        to{
+          left: 0px;
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes toright {
+        from{
+          left: -500px;
+          opacity: 0.2;
+        }
+        to{
+          left: 0px;
+          opacity: 1;
+        }
+      }
+      .slider-1 img{
+        position: relative;
+        width: 320px;
+        top: 600px;
+        animation: totop 2s forwards;
+        -webkit-animation: totop 2s forwards;
+      }
+      @keyframes totop {
+        from{
+          top: 600px;
+          opacity: 0.2;
+        }
+        to{
+          top: 0px;
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes totop {
+        from{
+          top: 600px;
+          opacity: 0.2;
+        }
+        to{
+          top: 0px;
+          opacity: 1;
+        }
       }
     </style>
   </head>
@@ -40,15 +125,17 @@
             <img src="images/dwjak.png" alt="端午节安康">
           </p>
         </div>
-        <div class="swiper-slide slider-1">
+        <div class="swiper-slide slider-2">
           <h2>为什么这么丑？</h2>
           <p>因为没有设计的妹子啊！</p>
           <p>
             <img src="images/ku.jpg" alt="哭">
           </p>
           <p>不要说，我知道，真TMD丑哭了</p>
+          <p>不要在意这些细节</p>
         </div>
-        <div class="swiper-slide slider-1">
+        <div class="swiper-slide slider-3">
+          <h2>切记！！！</h2>
           <p>如果别人说要给你粽子</p>
           <p>即使你不爱吃，也别急着拒绝</p>
           <p>因为，你永远不知道</p>
@@ -58,9 +145,8 @@
           </p>
           <p>这玩意儿，拿多少我都能消化了！</p>
         </div>
-        <div class="swiper-slide slider-1">
-          <h2>还没看够？</h2>
-          <p>对不起，那也没有了</p>
+        <div class="swiper-slide slider-4">
+          <h2>就这么多了</h2>
           <p>制作：一个智商捉急的程序猿</p>
           <p>目的：送给一个勤奋努力的好孩子</p>
           <p>
@@ -73,6 +159,23 @@
   <script>
     var mySwiper = new Swiper ('.swiper-container', {
       direction: 'vertical',
+      onInit: function(swiper){
+        var time=new Date().getTime();
+        $(".swiper-slide h2").addClass("to-bottom");
+        setTimeout(function(){
+          $(".swiper-slide p").addClass("to-right");
+        },1500);
+      },
+      onSlideChangeStart: function(swiper){
+        $(".swiper-slide h2").removeClass();
+        $(".swiper-slide p").removeClass();
+      },
+      onSlideChangeEnd: function(swiper){
+        $(".swiper-slide h2").addClass("to-bottom");
+        setTimeout(function(){
+          $(".swiper-slide p").addClass("to-right");
+        },1500);
+      }
       //loop: true
 
       // 如果需要分页器
