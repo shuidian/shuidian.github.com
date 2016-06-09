@@ -58,7 +58,7 @@
       }
       .swiper-slide p{
         position: relative;
-        left: -300px;
+        left: -400px;
       }
       .swiper-slide p.to-right{
         position: relative;
@@ -67,7 +67,7 @@
       }
       @keyframes toright {
         from{
-          left: -300px;
+          left: -400px;
           opacity: 0.2;
         }
         to{
@@ -77,7 +77,7 @@
       }
       @-webkit-keyframes toright {
         from{
-          left: -300px;
+          left: -400px;
           opacity: 0.2;
         }
         to{
@@ -88,27 +88,29 @@
       .slider-1 img{
         position: relative;
         width: 320px;
-        top: 600px;
-        animation: totop 2s forwards;
-        -webkit-animation: totop 2s forwards;
+        right: 400px;
       }
-      @keyframes totop {
+      .slider-1 img.to-left{
+        animation: to-left 2s forwards;
+        -webkit-animation: to-left 2s forwards;
+      }
+      @keyframes to-left {
         from{
-          top: 600px;
+          right: 400px;
           opacity: 0.2;
         }
         to{
-          top: 0px;
+          right: 0px;
           opacity: 1;
         }
       }
-      @-webkit-keyframes totop {
+      @-webkit-keyframes to-left {
         from{
-          top: 600px;
+          right: 400px;
           opacity: 0.2;
         }
         to{
-          top: 0px;
+          right: 0px;
           opacity: 1;
         }
       }
@@ -160,21 +162,27 @@
     var mySwiper = new Swiper ('.swiper-container', {
       direction: 'vertical',
       onInit: function(){
-        var time=new Date().getTime();
         $(".swiper-slide h2").addClass("to-bottom");
         setTimeout(function(){
           $(".swiper-slide p").addClass("to-right");
         },1500);
+        setTimeout(function(){
+          $(".swiper-slide img").addClass("to-left");
+        },3000);
       },
       onSliderMove:function(){
         $(".swiper-slide h2").removeClass();
         $(".swiper-slide p").removeClass();
+        $(".swiper-slide img").removeClass();
       },
       onSlideChangeEnd: function(){
         $(".swiper-slide h2").addClass("to-bottom");
         setTimeout(function(){
           $(".swiper-slide p").addClass("to-right");
         },1500);
+        setTimeout(function(){
+          $(".swiper-slide img").addClass("to-left");
+        },3000);
       }
       //loop: true
 
