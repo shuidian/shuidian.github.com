@@ -3,19 +3,92 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/my.css">
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
     <script src="js/my.js"></script>
-    <title>嘿嘿，杨聪明最漂亮</title>
+    <title>嘿嘿嘿</title>
+    <style>
+      html, body {
+        position: relative;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide{
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <header>
-        这里是头
-    </header>
-    <div class="container">
-      这里是主要内容区域
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slider-1">
+          <h2>今天过节，没错，是端午节</h2>
+          <p>那就要表示一下</p>
+          <p>不要方，下面是我的祝福语</p>
+          <p>
+            <img src="images/dwjak.png" alt="端午节安康">
+          </p>
+        </div>
+        <div class="swiper-slide slider-1">
+          <h2>为什么这么丑？</h2>
+          <p>因为没有设计的妹子啊！</p>
+          <p>
+            <img src="images/ku.jpg" alt="哭">
+          </p>
+          <p>不要说，我知道，真TMD丑哭了</p>
+        </div>
+        <div class="swiper-slide slider-1">
+          <h2>不过，丑无所谓啊，你好看就好了</h2>
+          <p>听说你今天要上课？</p>
+          <p>而且明天也上？</p>
+          <p>哈哈哈，我放三天假！</p>
+          <p>就喜欢你讨厌我却干不掉我的样子！</p>
+        </div>
+        <div class="swiper-slide slider-1">
+          <h2>给你一个忠告</h2>
+          <p>如果别人说要给你粽子</p>
+          <p>即使你不爱吃，也别急着拒绝</p>
+          <p>因为，你永远不知道</p>
+          <p>那TM是什么粽子！</p>
+          <p>
+            <img src="images/zongzi.jpg" alt="粽子">
+          </p>
+          <p>这玩意儿，拿多少我都能消化了！</p>
+        </div>
+        <div class="swiper-slide slider-1">
+          <h2>还没看够？</h2>
+          <p>对不起，那也没有了</p>
+          <p>制作：一个智商捉急的程序猿</p>
+          <p>目的：送给一个勤奋努力的好孩子</p>
+          <p>
+            <img src="images/nzb.png" alt="你真棒">
+          </p>
+        </div>
+      </div>
     </div>
-    <footer>
-      这里是脚
-    </footer>
   </body>
+  <script>
+    var mySwiper = new Swiper ('.swiper-container', {
+      direction: 'vertical',
+      loop: true
+
+      // 如果需要分页器
+      //pagination: '.swiper-pagination',
+
+      // 如果需要前进后退按钮
+      //nextButton: '.swiper-button-next',
+      //prevButton: '.swiper-button-prev',
+
+      // 如果需要滚动条
+      //scrollbar: '.swiper-scrollbar',
+    });
+  </script>
 </html>
